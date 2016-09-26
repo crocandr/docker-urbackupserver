@@ -14,10 +14,11 @@ docker build -t croc/urbackupsrv .
 ## Run
 
 ```
-docker run -tid --name=urbackupsrv --net=host -v /srv/urbackupsrv/data:/media/BACKUP/ croc/urbackupsrv /opt/start.sh
+docker run -tid --name=urbackupsrv --net=host -v /srv/urbackupsrv/data:/media/BACKUP/urbackup croc/urbackupsrv /opt/start.sh
 ```
 
 ## Usage
 
-The URBackup's WEBUI available on http://< your docker host >:55414/ ( example: http://192.168.56.103:55414/ )
+The URBackup's WEBUI available on http://< your docker host >:55414/
+Example: http://192.168.56.103:55414/
 
