@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  urbackup-server:
+    image: uroni/urbackup-server
+    volumes:
+      - '/etc/localtime:/etc/localtime:ro'
+      - './backups:/backups'
+      - './database:/var/urbackup'
+    ports:
+      - '55413-55415:55413-55415'
+      - '35632:35623/udp'
+    restart: unless-stopped
+

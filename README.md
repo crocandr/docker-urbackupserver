@@ -3,18 +3,17 @@
 ## Info
 
   - Official Webpage: https://www.urbackup.org/
-  - REPO: https://www.urbackup.org/download.html#server_ubuntu
 
 ## Build
 
 ```
-docker build -t croc/urbackupsrv .
+docker build -t croc/urbackup-server .
 ```
 
 ## Run
 
 ```
-docker run -tid --name=urbackupsrv --net=host -v /srv/urbackupsrv/data:/media/BACKUP/urbackup croc/urbackupsrv /opt/start.sh
+docker-compose up -d
 ```
 
 ## Usage
@@ -22,3 +21,12 @@ docker run -tid --name=urbackupsrv --net=host -v /srv/urbackupsrv/data:/media/BA
 The URBackup's WEBUI available on http://< your docker host >:55414/
 Example: http://192.168.56.103:55414/
 
+
+## official way
+
+You can use official docker solution too: https://www.urbackup.org/download.html#server_docker
+I have created a compose file to offical docker container:
+
+```
+docker-compose -f docker-compose-officialurbackup.yml up -d
+```

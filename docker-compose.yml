@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  urbackup-server:
+    image: croc/urbackup-server
+    volumes:
+      - '/etc/localtime:/etc/localtime:ro'
+      - './backups:/media/BACKUP/urbackup'
+      - './database:/var/urbackup'
+    ports:
+      - '55413:55413'
+      - '55414:55414'
+      - '55415:55415'
+      - '35632:35623/udp'
+    restart: unless-stopped
+
